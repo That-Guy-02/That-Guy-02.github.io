@@ -1,0 +1,38 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-container {
+    position: relative;
+}
+
+.images img {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.text-overlay {
+    position: fixed;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(255, 0, 0, 0.5);
+    color: black;
+    padding: 20px 40px;
+    border-radius: 8px;
+    font-size: 32px;
+    text-align: center;
+    font-weight: bold;
+}
