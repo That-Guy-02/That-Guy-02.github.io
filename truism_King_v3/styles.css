@@ -1,0 +1,42 @@
+/* Make page and video full screen */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+}
+
+.video-container {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+video#mainVideo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+}
+
+/* Style for the text box */
+#textBox {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: red;
+  color: black;
+  padding: 25px 50px;
+  font-size: 32px;
+  font-weight: bold;
+  text-align: center;
+  z-index: 10;
+  cursor: pointer;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
