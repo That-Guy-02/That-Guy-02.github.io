@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fullscreen Video with Audio Buttons</title>
+  <link href="css/styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  <video id="background-video" loop muted>
+    <source src="videos/video.mp4" type="video/mp4">
+    Your browser does not support HTML5 video.
+  </video>
+
+  <div class="buttons">
+    <button class="audio-button" onclick="playAudio('audio1')">Dialogue</button>
+    <button class="audio-button" onclick="playAudio('audio2')">Song</button>
+    <button class="audio-button" onclick="playAudio('audio3')">Sparkle</button>
+  </div>
+
+  <audio id="audio1" src="audio/dialogue.mp3" loop></audio>
+  <audio id="audio2" src="audio/song.mp3" loop></audio>
+  <audio id="audio3" src="audio/sparkle.mp3" loop></audio>
+
+  <script>
+    const video = document.getElementById('background-video');
+    const audioIds = ['audio1', 'audio2', 'audio3'];
+    let videoStarted = false;
+    let audioStarted = false;
+
+    function playAudio(selectedId) {
+      if (!videoStarted) {
+        video.play();
+        videoStarted = true;
+      }
+
+      audioIds.forEach(id => {
+        const audio = document.getElementById(id);
+
+        if (!audioStarted) {
+          audio.play();
+        }
+
+        // Set the volume: 1 for the selected audio, 0 for others
+        audio.volume = (id === selectedId) ? 1 : 0;
+      });
+
+      audioStarted = true;
+    }
+  </script>
+</body>
+</html>
